@@ -1,0 +1,26 @@
+<div class="header">
+  <ul>
+    <li>
+      <img src="{{ url_for('static', filename='assets/logo.ico') }}" width="42" height="42" alt="Logo">
+    </li>
+    <li><a href="{{ url_for('index') }}" class="button">Home</a></li>
+    <li><a href="{{ url_for('collab') }}" class="button">Collaborate</a></li>
+    <li><a href="{{ url_for('contact') }}" class="button">Contact</a></li>
+    <li><a href="{{ url_for('about') }}" class="button">About</a></li>
+    {% if current_user.is_authenticated %}
+    <li><a href="{{ url_for('add_new_project') }}" class="button">Upload New Project</a></li>
+    {% endif %}
+  </ul>
+
+  <div>
+    {% if not current_user.is_authenticated %}
+    <a href="{{ url_for('login') }}"> 
+      <button class="button">Login</button>
+    </a>
+    {% else %}
+    <a href="{{ url_for('logout') }}"> 
+      <button class="button">Log Out</button>
+    </a>
+    {% endif %}
+  </div>
+</div>

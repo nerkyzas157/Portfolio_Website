@@ -1,0 +1,220 @@
+@charset "UTF-8";
+
+body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    /* Easily readable font */
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.header {
+    background-color: #1B262C;
+    color: #ffffff;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.header ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.header ul li {
+    margin: 0 10px;
+}
+
+.header ul li a,
+.header .button {
+    background-color: #BBE1FA;
+    color: #000000;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* Smooth transition for hover effects */
+}
+
+.header ul li a:hover,
+.header .button:hover {
+    background-color: #0F4C75;
+    /* Hover background color */
+    color: #ffffff;
+    /* Hover text color */
+}
+
+footer {
+    background-color: #1B262C;
+    color: #ffffff;
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+
+.content-bg {
+    background-color: #3282B8;
+    padding: 20px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.container {
+    background-color: #0F4C75;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container .text {
+    color: #ffffff;
+    flex: 2;
+    /* Text takes up 2/3 of the container */
+    display: flex;
+    flex-direction: column;
+    /* Aligns text elements vertically */
+    justify-content: center;
+    /* Centers the text vertically within its space */
+    text-align: left;
+    gap: 10px;
+    /* Adds space between text elements */
+}
+
+.container img {
+    border-radius: 15px;
+    width: 400px;
+    height: 200px;
+    object-fit: cover;
+    /* Ensures the image fits within the specified dimensions */
+    flex-shrink: 0;
+    /* Prevents the image from shrinking */
+}
+
+/* General button styling */
+.button {
+    background-color: #BBE1FA;
+    color: #000000;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* Smooth transition for hover effects */
+}
+
+.button:hover {
+    background-color: #0F4C75;
+    /* Hover background color */
+    color: #ffffff;
+    /* Hover text color */
+}
+
+/* Ensuring footer sticks to bottom */
+html,
+body {
+    height: 100%;
+}
+
+body>.content-bg {
+    flex: 1;
+}
+
+footer {
+    position: sticky;
+    bottom: 0;
+}
+
+footer img {
+    margin-right: 10px;
+}
+
+/* Make the entire container clickable */
+.container-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Ensure the entire container is a link */
+.container-link .container {
+    cursor: pointer;
+}
+
+/* Container for the buttons */
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    /* Adds space between buttons */
+    margin-top: 20px;
+    /* Adds space from the content above */
+}
+
+.button-container .button {
+    margin-left: 10px;
+}
+
+/* Hover effect for project containers */
+.container-link:hover .container {
+    background-color: #BBE1FA;
+    /* Highlight color on hover */
+    color: #000000;
+    /* Text color on hover */
+}
+
+/* Ensure that all text inside the container inherits the hover color */
+.container-link:hover .container h2,
+.container-link:hover .container h3,
+.container-link:hover .container p {
+    color: #000000;
+    /* Text color on hover */
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    /* Ensure it's above other elements */
+}
+
+/* Main content area to push the footer to the bottom if content is insufficient */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Ensure the body takes the full viewport height */
+}
+
+.main-content {
+    flex: 1;
+}
+
+/* Footer that stays at the bottom if there's not enough content */
+footer {
+    background-color: #1B262C;
+    color: #ffffff;
+    padding: 1rem;
+    text-align: center;
+    margin-top: auto;
+}

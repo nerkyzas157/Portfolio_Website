@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% from 'bootstrap5/form.html' import render_form %}
+
+{% block title %}Contact{% endblock %}
+{% block content %}
+    <div class="container">
+        {% if msg_sent: %}
+        <div class="text">
+            <h1>Successfully sent your message</h1>
+            <p>
+                I will get back to you as soon as possible!
+            </p>
+        </div>
+        {% else %}
+        <div class="text">
+            <h1>Contact Me</h1>
+            <p>
+                Want to get in touch? Fill out the form below to send me a message!
+            </p>
+        </div>  
+        {{ render_form(form) }}
+        {% endif %}
+    </div>
+{% endblock %}

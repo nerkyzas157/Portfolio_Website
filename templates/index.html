@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Portfolio{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="text">
+        <h1>Welcome to My Portfolio Website</h1>
+        <h5>This is where you'll find my latest programming projects.</h5>
+    </div>
+</div>
+
+{% for project in projects %}
+<a href="{{ url_for('show_project', project_id=project.id) }}" class="container-link">
+    <div class="container">
+        <div class="text">
+            <h2>{{ project.title }}</h2>
+            <h4>{{ project.subtitle }}</h4>
+            <p>Posted on {{ project.date }}</p>
+        </div>
+        <img src="{{ project.img_url }}" alt="Image">
+    </div>
+</a>
+{% endfor %}
+
+{% endblock %}
