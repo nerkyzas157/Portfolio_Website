@@ -6,7 +6,6 @@ body {
     display: flex;
     flex-direction: column;
     font-family: Arial, sans-serif;
-    /* Easily readable font */
 }
 
 .main-content {
@@ -47,15 +46,12 @@ body {
     text-decoration: none;
     display: inline-block;
     transition: background-color 0.3s ease, color 0.3s ease;
-    /* Smooth transition for hover effects */
 }
 
 .header ul li a:hover,
 .header .button:hover {
     background-color: #0F4C75;
-    /* Hover background color */
     color: #ffffff;
-    /* Hover text color */
 }
 
 footer {
@@ -90,15 +86,11 @@ footer {
 .container .text {
     color: #ffffff;
     flex: 2;
-    /* Text takes up 2/3 of the container */
     display: flex;
     flex-direction: column;
-    /* Aligns text elements vertically */
     justify-content: center;
-    /* Centers the text vertically within its space */
     text-align: left;
     gap: 10px;
-    /* Adds space between text elements */
 }
 
 .container img {
@@ -106,12 +98,9 @@ footer {
     width: 400px;
     height: 200px;
     object-fit: cover;
-    /* Ensures the image fits within the specified dimensions */
     flex-shrink: 0;
-    /* Prevents the image from shrinking */
 }
 
-/* General button styling */
 .button {
     background-color: #BBE1FA;
     color: #000000;
@@ -120,17 +109,13 @@ footer {
     text-decoration: none;
     display: inline-block;
     transition: background-color 0.3s ease, color 0.3s ease;
-    /* Smooth transition for hover effects */
 }
 
 .button:hover {
     background-color: #0F4C75;
-    /* Hover background color */
     color: #ffffff;
-    /* Hover text color */
 }
 
-/* Ensuring footer sticks to bottom */
 html,
 body {
     height: 100%;
@@ -149,72 +134,96 @@ footer img {
     margin-right: 10px;
 }
 
-/* Make the entire container clickable */
 .container-link {
     display: block;
     text-decoration: none;
     color: inherit;
 }
 
-/* Ensure the entire container is a link */
 .container-link .container {
     cursor: pointer;
 }
 
-/* Container for the buttons */
 .button-container {
     display: flex;
     justify-content: flex-end;
     gap: 10px;
-    /* Adds space between buttons */
     margin-top: 20px;
-    /* Adds space from the content above */
 }
 
 .button-container .button {
     margin-left: 10px;
 }
 
-/* Hover effect for project containers */
 .container-link:hover .container {
     background-color: #BBE1FA;
-    /* Highlight color on hover */
     color: #000000;
-    /* Text color on hover */
 }
 
-/* Ensure that all text inside the container inherits the hover color */
 .container-link:hover .container h2,
 .container-link:hover .container h3,
 .container-link:hover .container p {
     color: #000000;
-    /* Text color on hover */
 }
 
 .header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    /* Ensure it's above other elements */
 }
 
-/* Main content area to push the footer to the bottom if content is insufficient */
 body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    /* Ensure the body takes the full viewport height */
 }
 
 .main-content {
     flex: 1;
 }
 
-/* Footer that stays at the bottom if there's not enough content */
 footer {
     background-color: #1B262C;
     color: #ffffff;
     padding: 1rem;
     text-align: center;
     margin-top: auto;
+}
+
+.title-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.big-button {
+    display: flex;
+    align-items: center;
+    background-color: #BBE1FA;
+    color: #000;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.big-button:hover {
+    background-color: #0F4C75;
+    color: #fff;
+}
+
+.button-logo {
+    width: 10px;
+    height: 10px;
+    object-fit: cover;
+    flex-shrink: 0;
+    margin-right: 0.5rem;
+    display: block;
+}
+
+.form-container label {
+    color: white;
 }

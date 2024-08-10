@@ -5,7 +5,13 @@
 {% block content %}
 <div class="container">
     <div class="text">
-        <h1>{{ project.title }}</h1>
+        <div class="title-container">
+            <h1>{{ project.title }}</h1>
+            <a href="{{ project.github_url }}" class="big-button">
+                <img src="{{ url_for('static', filename='assets/github_logo.png') }}" style="width: 100px; height: 100px;" alt="GitHub Logo" class="button-logo">
+                <span>Visit Repository</span>
+            </a>
+        </div>
         <h2>{{ project.subtitle }}</h2>
         <span>Posted on {{ project.date }} </span>
         
@@ -20,8 +26,7 @@
 
 <div class="container">
     <div class="text">
-        {{ project.body|safe }}
+        {{ readme|safe }}
     </div>
-    <img src="{{ project.img_url }}" alt="Image">
 </div>
 {% endblock %}

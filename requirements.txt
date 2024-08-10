@@ -7,3 +7,7 @@ SQLAlchemy==2.0.32
 gunicorn==22.0.0
 psycopg2-binary==2.9.9
 Flask-Login==0.6.3
+Markdown==3.6
+Pygments==2.18.0
+beautifulsoup4==4.12.3
+requests==2.32.3

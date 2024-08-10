@@ -14,13 +14,13 @@ import os
 # import smtplib
 from forms import CreatePostForm, AuthForm, ContactForm
 from models import Project, db
-from scraper_md import scrapy
+from scraper_md import scrapy, md_data
 
 app = Flask(__name__)
 
-ADMIN_KEY = "619UmOvjSOE1io{k/M$G"
+ADMIN_KEY = "vkfE>lx$g9c;&<fU]U7Vb;{&R1d6??"
 # SECRET_KEY = os.environ.get("SECRET_KEY")
-app.config["SECRET_KEY"] = "Y-9D6Bq;QF>?Y0Z4<7Zg"
+app.config["SECRET_KEY"] = "4[4]2rU£'3}kA?cC@K5nZ$l!Ph1rd*"
 app.config["SQLALCHEMY_DATABASE_URI"] = (
     "sqlite:///C:/Users/Neriukas/Desktop/Code/Portfolio/instance/database.db"
 )
@@ -74,7 +74,11 @@ def about():
 @app.route("/project/<int:project_id>", methods=["GET", "POST"])
 def show_project(project_id):
     requested_project = db.get_or_404(Project, project_id)
-    return render_template("project.html", project=requested_project)
+    data = db.session.execute(
+        db.select(Project.readme).where(Project.id == project_id)
+    ).scalar()
+    readme = md_data(data)
+    return render_template("project.html", project=requested_project, readme=readme)
 
 
 @app.route("/login", methods=["GET", "POST"])
