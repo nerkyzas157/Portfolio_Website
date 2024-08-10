@@ -18,12 +18,10 @@ from scraper_md import scrapy, md_data
 
 app = Flask(__name__)
 
-ADMIN_KEY = "vkfE>lx$g9c;&<fU]U7Vb;{&R1d6??"
+ADMIN_KEY = ""
 # SECRET_KEY = os.environ.get("SECRET_KEY")
-app.config["SECRET_KEY"] = "4[4]2rU£'3}kA?cC@K5nZ$l!Ph1rd*"
-app.config["SQLALCHEMY_DATABASE_URI"] = (
-    "sqlite:///C:/Users/Neriukas/Desktop/Code/Portfolio/instance/database.db"
-)
+app.config["SECRET_KEY"] = ""
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///instance/database.db"
 # ADMIN_KEY = os.environ.get("ADMIN_KEY")
 # # SECRET_KEY = os.environ.get("SECRET_KEY")
 # app.config["SECRET_KEY"] = os.environ.get("FLASK_KEY")
