@@ -18,7 +18,9 @@ def scrapy(github_url: str, branch: str = "main") -> str:
 
 
 def md_data(data, style: str = "emacs"):
-    md_template_string = markdown.markdown(data, extensions=["fenced_code"])
+    md_template_string = markdown.markdown(data, extensions=["fenced_code"]).split(
+        "</h1>"
+    )[1]
 
     formatter = HtmlFormatter(style=style, full=True, cssclass="codehilite")
     css_string = formatter.get_style_defs()

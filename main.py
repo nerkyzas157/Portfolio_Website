@@ -1,6 +1,6 @@
 from datetime import datetime
-from flask import Flask, render_template, redirect, url_for, request, flash  # type: ignore
-from flask_bootstrap import Bootstrap5  # type: ignore
+from flask import Flask, render_template, redirect, url_for, request, flash
+from flask_bootstrap import Bootstrap5
 from flask_login import (
     UserMixin,
     login_user,
@@ -8,26 +8,23 @@ from flask_login import (
     login_required,
     logout_user,
     current_user,
-)  # type: ignore
+)
 import os
+import smtplib
 
-# import smtplib
 from forms import CreatePostForm, AuthForm, ContactForm
 from models import Project, db
 from scraper_md import scrapy, md_data
 
 app = Flask(__name__)
 
-ADMIN_KEY = ""
-# SECRET_KEY = os.environ.get("SECRET_KEY")
-app.config["SECRET_KEY"] = ""
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///instance/database.db"
-# ADMIN_KEY = os.environ.get("ADMIN_KEY")
-# # SECRET_KEY = os.environ.get("SECRET_KEY")
-# app.config["SECRET_KEY"] = os.environ.get("FLASK_KEY")
-# app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get(
-#     "DB_URI", "sqlite:///database.db"
-# )
+SMTP_EMAIL = os.environ.get("SMTP_EMAIL")
+APP_PASSWORD = os.environ.get("SMTP_APP_PASS")
+ADMIN_KEY = os.environ.get("ADMIN_KEY")
+app.config["SECRET_KEY"] = os.environ.get("FLASK_KEY")
+app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get(
+    "DB_URI", "sqlite:///database.db"
+)
 Bootstrap5(app)
 
 login_manager = LoginManager()
@@ -160,15 +157,14 @@ def contact():
     return render_template("contact.html", form=form, msg_sent=False)
 
 
-# TODO: Implement email sending feature
 def send_email(name, email, message):
     email_message = f"Subject:New Message from Portfolio Website\n\nName: {name}\nEmail: {email}\nMessage:{message}"
     print(email_message)
-    # with smtplib.SMTP("smtp.gmail.com") as connection:
-    #     connection.starttls()
-    #     connection.login(SMTP_EMAIL, APP_PASSWORD)
-    #     connection.sendmail(SMTP_EMAIL, SMTP_EMAIL, email_message)
+    with smtplib.SMTP("smtp.gmail.com") as connection:
+        connection.starttls()
+        connection.login(SMTP_EMAIL, APP_PASSWORD)
+        connection.sendmail(SMTP_EMAIL, SMTP_EMAIL, email_message)
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)
