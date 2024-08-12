@@ -54,7 +54,7 @@ with app.app_context():
 
 @app.route("/")
 def index():
-    result = db.session.execute(db.select(Project).order_by(desc(Project.date)))
+    result = db.session.execute(db.select(Project).order_by(desc(Project.id)))
     projects = result.scalars().all()
     return render_template("index.html", projects=projects)
 
