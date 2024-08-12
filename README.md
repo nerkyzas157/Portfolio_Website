@@ -8,9 +8,7 @@ Welcome to my Portfolio Website repository! This is the codebase for my personal
 - [Technologies Used](#technologies-used)
 - [Getting Started](#getting-started)
 - [Usage](#usage)
-- [Contributing](#contributing)
 - [License](#license)
-- [Contact](#contact)
 
 ## Overview
 
@@ -53,7 +51,7 @@ You need to have the following installed on your machine:
 cd Portfolio_Website
 ```
 
-### Usage
+## Usage
 Feel free to explore the different sections of the website. If you'd like to customize the website for your own use:
 
 - Update Content: Modify the text and images in the HTML files to reflect your own information.
