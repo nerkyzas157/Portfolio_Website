@@ -20,3 +20,13 @@ class Project(db.Model):
     img_url: Mapped[str] = mapped_column(String(250), nullable=True)
     github_url: Mapped[str] = mapped_column(String(250), nullable=False)
     readme: Mapped[str] = mapped_column(Text, nullable=False)
+
+
+class Learning(db.Model):
+    __tablename__ = "learning"
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    title: Mapped[str] = mapped_column(String(250), unique=True, nullable=False)
+    subtitle: Mapped[str] = mapped_column(String(250), nullable=False)
+    img_url: Mapped[str] = mapped_column(String(250), nullable=True)
+    github_url: Mapped[str] = mapped_column(String(250), nullable=False)
+    readme: Mapped[str] = mapped_column(Text, nullable=False)
