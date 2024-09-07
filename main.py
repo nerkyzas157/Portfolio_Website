@@ -12,7 +12,6 @@ from flask_login import (
 from sqlalchemy import desc
 import os
 import smtplib
-from dotenv import load_dotenv
 
 from forms import CreatePostForm, AuthForm, ContactForm
 from models import Project, Learning, db
@@ -21,7 +20,6 @@ from scraper_md import scrapy, md_data
 
 app = Flask(__name__)
 
-load_dotenv("C://Users//Neriukas//Desktop//Code//Portfolio//secrets//.env")
 
 SMTP_EMAIL = os.environ.get("SMTP_EMAIL")
 APP_PASSWORD = os.environ.get("SMTP_APP_PASS")
