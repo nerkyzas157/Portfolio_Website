@@ -1,4 +1,7 @@
 <div class="header">
+  <div class="menu-icon" onclick="toggleMenu()">
+    &#9776; <!-- Hamburger icon -->
+  </div>
   <ul>
     <li>
       <img src="{{ url_for('static', filename='assets/logo.ico') }}" width="42" height="42" alt="Logo">
@@ -25,3 +28,9 @@
     {% endif %}
   </div>
 </div>
+
+<script>
+function toggleMenu() {
+    document.querySelector('.header').classList.toggle('menu-active');
+}
+</script>

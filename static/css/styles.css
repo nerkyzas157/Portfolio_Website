@@ -227,3 +227,31 @@ footer {
 .form-container label {
     color: white;
 }
+
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+@media (max-width: 1080px) {
+    .header ul {
+        display: none;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+    }
+
+    .menu-icon {
+        display: block;
+        padding: 10px;
+    }
+
+    .header ul li {
+        margin: 10px 0;
+    }
+
+    .menu-active ul {
+        display: flex;
+    }
+}
